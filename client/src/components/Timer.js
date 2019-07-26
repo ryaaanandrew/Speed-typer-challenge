@@ -32,7 +32,7 @@ const Timer = (props) => {
     
     useEffect(() => {
         if(props.started === false) {
-            setTimeLeft(5);
+            setTimeLeft(20);
         };
     },[props.started]);
 
