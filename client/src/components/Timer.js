@@ -32,7 +32,7 @@ const Timer = (props) => {
     
     useEffect(() => {
         if(props.started === false) {
-            setTimeLeft(10);
+            setTimeLeft(5);
         };
     },[props.started]);
 
@@ -48,7 +48,7 @@ const Timer = (props) => {
         <div className="timer">
             <div className="timer__header">Time left: {timeLeft}</div>
         </div>
-    )
+    );
 };
 
 const mapStateToProps = state => {

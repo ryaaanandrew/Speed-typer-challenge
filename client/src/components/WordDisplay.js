@@ -11,7 +11,7 @@ const WordDisplay = (props) => {
                 <h1 className='wordDisplay__main'>{props.randomWord}</h1>
             }
         </div>
-    )
+    );
 };
 
 const mapStateToProps = (state) => {

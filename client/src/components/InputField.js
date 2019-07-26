@@ -10,6 +10,6 @@ const InputField = (props) => {
             </form>
         </div>
     );
-}
+};
 
 export default connect(null, { setValue })(InputField);

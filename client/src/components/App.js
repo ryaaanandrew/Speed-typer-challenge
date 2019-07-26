@@ -32,7 +32,7 @@ const App = (props) => {
 
     const onChange = (e) => {
         setCurrentValue(e.target.value);
-    }
+    };
 
     return (
         <>
@@ -41,21 +41,18 @@ const App = (props) => {
                     <Timer seconds={10} started={false} />
                     <Score score={props.score}/>
                 </div>
-
                 <WordDisplay />
-
                 <div className="btnContainer">
                     <Button onClick={start} text={'Start Game'} />
                     <Button onClick={stop} text={'Stop Game'} />
                 </div>
-
                 <InputField onSubmit={checkAnswers} onChange={onChange} value={currentValue}/>
             </div> 
             <div className="sub">
                 <Leaderboard />
             </div>
         </> 
-        )
+        );
 };
 
 const mapStateToProps = (state) => {

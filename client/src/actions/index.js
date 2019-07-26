@@ -4,15 +4,16 @@ import { FETCH_WORD, SET_VALUE, START_GAME, STOP_GAME, SET_SCORE, SAVE_SCORE, FE
 export const saveScore = (name, score, date) => async (dispatch) => {
     const response = await axios.post('http://localhost:3001/scores', {name, score, date});
 
-    return {
+    dispatch({
         type: SAVE_SCORE,
         payload: response.data
-    };
+    });
 };
 
 export const fetchScores = () => async (dispatch) => {
-    const response = await axios.get('http://localhost:3001/scores');
-    
+    // const response = await axios.get('https://api.myjson.com/bins/1ershl');
+    const response = await axios.get('http://localhost:3001/scores')
+
     dispatch({
         type: FETCH_SCORES,
         payload: response.data
@@ -20,7 +21,7 @@ export const fetchScores = () => async (dispatch) => {
 };
 
 export const fetchWord = () => async (dispatch) => {
-    const API_KEY = 'MDG0K8GD';
+    const API_KEY = 'G4YUBDE3';
     const response = await axios.get(`https://random-word-api.herokuapp.com/word?key=${API_KEY}&number=1`);
 
     dispatch({
