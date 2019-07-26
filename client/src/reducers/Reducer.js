@@ -1,7 +1,7 @@
 import { FETCH_WORD, SET_VALUE, START_GAME, STOP_GAME, SET_SCORE, SAVE_SCORE } from '../actions/types'
 
 const INITIAL_STATE = {
-    randomWord: [],
+    randomWord: '',
     answer: '',
     started: false,
     score: 0

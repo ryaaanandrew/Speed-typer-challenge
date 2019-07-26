@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { FETCH_WORD, SET_VALUE, START_GAME, STOP_GAME, SET_SCORE, SAVE_SCORE, FETCH_SCORES } from './types';
+import { jsonResponse } from '../api/randomWord';
 
 export const saveScore = (name, score, date) => async (dispatch) => {
-    const response = await axios.post('http://localhost:3001/scores', {name, score, date});
+    const response = await axios.post('https://api.myjson.com/bins/1ershl', {"name": name, "score": score, "date": date});
 
     dispatch({
         type: SAVE_SCORE,
@@ -12,7 +13,7 @@ export const saveScore = (name, score, date) => async (dispatch) => {
 
 export const fetchScores = () => async (dispatch) => {
     // const response = await axios.get('https://api.myjson.com/bins/1ershl');
-    const response = await axios.get('http://localhost:3001/scores')
+    const response = await axios.get('http://localhost:3001/scores');
 
     dispatch({
         type: FETCH_SCORES,
@@ -21,12 +22,12 @@ export const fetchScores = () => async (dispatch) => {
 };
 
 export const fetchWord = () => async (dispatch) => {
-    const API_KEY = 'G4YUBDE3';
-    const response = await axios.get(`https://random-word-api.herokuapp.com/word?key=${API_KEY}&number=1`);
+    const index = Math.round(Math.random() * 2500);
+    const response = await axios.get(`https://api.myjson.com/bins/12fckd`);
 
     dispatch({
         type: FETCH_WORD,
-        payload: response.data
+        payload: response.data.words[index]
     });
 };
 

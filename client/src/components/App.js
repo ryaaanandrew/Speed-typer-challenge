@@ -57,7 +57,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        randomWord: state.reducer.randomWord.join(),
+        // randomWord: state.reducer.randomWord.join(),
+        randomWord: state.reducer.randomWord,
         answer: state.reducer.answer,
         score: state.reducer.score
     };

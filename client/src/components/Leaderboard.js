@@ -18,7 +18,7 @@ const Leaderboard = (props) => {
     return (
         <div className="leaderboard">
             <h1 className='leaderboard__header'> Leaderboard</h1>
-            {renderList()}
+            {props.scores.length === 0 ? <div className="leaderboard__header "> no connection to server </div> : renderList()}
         </div>
     );
 };
